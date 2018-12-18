@@ -22,7 +22,7 @@ var checkRateLimit = require('./lib/rate-limit')(process.env.CORSANYWHERE_RATELI
 var cors_proxy = require('./lib/cors-anywhere');
 cors_proxy.createServer({
   originBlacklist: originBlacklist,
-  originWhitelist: originWhitelist,
+  originWhitelist: ['http://modelclips.com', 'https://modelclips.com', 'http://www.modelclips.com', 'https://www.modelclips.com', 'http://modelclips.com:8080', 'https://modelclips.com:8080', 'http://www.modelclips.com:8080', 'https://www.modelclips.com:8080'] ,
   requireHeader: ['origin', 'x-requested-with'],
   checkRateLimit: checkRateLimit,
   removeHeaders: [
